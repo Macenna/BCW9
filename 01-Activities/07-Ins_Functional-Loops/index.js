@@ -5,7 +5,7 @@ const moviePatrons = [
   { name: "Alvin", age: 22 },
   { name: "Cherie", age: 14 },
   { name: "Malcolm", age: 15 }
-];
+]; // Array of objects 
 
 // 1.
 
