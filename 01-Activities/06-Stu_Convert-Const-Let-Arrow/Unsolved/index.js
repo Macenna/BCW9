@@ -1,10 +1,12 @@
-var $root = document.querySelector("#root");
+const $root = document.querySelector("#root");
 
-var score;
-var targetScore;
+// Score and targetScore will change throughout the game but the game itself does not change 
+let score;
+let targetScore;
 
-var makeGuess = function() {
-  var $score = document.querySelector("#root p");
+// W/in the functions, the rules stay the same, so const them 
+const makeGuess = function() {
+  const $score = document.querySelector("#root p");
   $score.textContent = "Score: " + score + " | " + "Target: " + targetScore;
 
   if (score > targetScore) {
@@ -16,7 +18,9 @@ var makeGuess = function() {
   }
 };
 
-var Crystal = function(color) {
+// Don't want to change the function - const 
+  // Crystal is capitalized for a reason 
+const Crystal = function(color) {
   this.element = document.createElement("div");
   this.element.className = "crystal " + color;
   this.value = 0;
@@ -36,11 +40,11 @@ Crystal.prototype.render = function(target) {
   target.appendChild(this.element);
 };
 
-var crystals = [new Crystal("red"), new Crystal("blue"), new Crystal("green")];
+const crystals = [new Crystal("red"), new Crystal("blue"), new Crystal("green")];
 
-var playRound = function() {
-  var fragment = document.createDocumentFragment();
-  var $score = document.createElement("p");
+const playRound = function() {
+  const fragment = document.createDocumentFragment();
+  const $score = document.createElement("p");
   targetScore = Math.floor(Math.random() * 50) + 25;
   score = 0;
   $score.textContent = "Score: " + score + " | " + "Target: " + targetScore;
