@@ -20,7 +20,7 @@ const isPrime = num => {
   }
   // Otherwise, isPrime will return num, unless num == 1.
   return num !== 1;
-};
+}; //This is a well known function - called a first class function 
 
 
 // TODO: Describe how filter is working in this example. What will the value of primeArray be? 
